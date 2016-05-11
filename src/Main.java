@@ -1,30 +1,60 @@
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String...args) {
 
-        Scanner reader = new Scanner(System.in);
+        int month = 1;
 
-        System.out.println("Welcome!\nNow you can enter your number:");
+        switch (month) {
 
-        int targetNumber = 10;
-        int enteredNumber;
+            case 1:
+                System.out.println("1");
+                break;
 
-        if (reader.hasNextInt()) {
-            enteredNumber = reader.nextInt();
+            case 2:
+                System.out.println("2");
+                break;
 
-            if (enteredNumber == targetNumber) {
-                System.out.println(true);
-            } else {
-                System.out.println(false);
-            }
+            case 3:
+                System.out.println("3");
+                break;
 
-        } else {
-            System.out.println(false);
+            case 4:
+                System.out.println("4");
+                break;
+
+            case 5:
+                System.out.println("5");
+                break;
+
+            case 6:
+                System.out.println("6");
+                break;
+
+            case 7:
+                System.out.println("7");
+                break;
+
+            case 8:
+                System.out.println("8");
+                break;
+
+            case 9:
+                System.out.println("9");
+                break;
+
+            case 10:
+                System.out.println("10");
+                break;
+
+            case 11:
+                System.out.println("11");
+                break;
+
+            case 12:
+                System.out.println("12");
+                break;
+
         }
-
-
 
     }
 
