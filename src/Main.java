@@ -1,11 +1,13 @@
-/**
- * Created by USER on 11.05.2016.
- */
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String...args) {
 
-        System.out.print("Hello World! Message changed. Changed again.");
+        System.out.println("Welcome!");
+        Scanner reader = new Scanner(System.in);
+        String input = reader.next();
+        System.out.println(input);
 
     }
 
