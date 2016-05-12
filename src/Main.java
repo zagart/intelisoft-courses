@@ -2,6 +2,8 @@ public class Main {
 
     public static void main(String...args) {
 
+        String text = "New text.";
+
         int month = 1;
 
         switch (month) {
