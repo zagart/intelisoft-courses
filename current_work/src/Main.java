@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+
 public class Main {
 
     public static void main(String...args) {
@@ -12,7 +14,10 @@ public class Main {
         Point point = new Point();
         point.setX(10);
         point.setY(10);
-        point.getPointQuarter();
+        point.getQuarterOfPoint();
+
+        Cat myCat = new Cat("Markiz","Black&White","Usual");
+        System.out.println(myCat);
 
     }
 

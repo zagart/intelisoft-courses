@@ -1,3 +1,8 @@
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
+
 /**
  * Created by USER on 18.05.2016.
  */
@@ -5,6 +10,17 @@ public class Point {
 
     private int x = 0;
     private int y = 0;
+
+    /**
+     public Point() {
+     Scanner scanner = new Scanner(System.in);
+     System.out.println("Enter X please: ");
+     x = scanner.nextInt();
+     System.out.println("Enter Y please: ");
+     y = scanner.nextInt();
+     }
+     */
+
 
     public int getY() {
         return y;
@@ -23,7 +39,7 @@ public class Point {
         this.x = x;
     }
 
-    public void getPointQuarter() {
+    public void getQuarterOfPoint() {
         String msg = "";
 
         if (x == 0 && y == 0 ) {
@@ -42,6 +58,13 @@ public class Point {
             msg = "Fourth quarter.";
         }
         System.out.println(msg);
+    }
+
+    public boolean isPointFar(Point point) {
+        if ((this.x > point.getX()) && (this.y > point.getY())) {
+            return true;
+        }
+        return false;
     }
 
     @Override
