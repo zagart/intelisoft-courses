@@ -9,6 +9,11 @@ public class Main {
 
         System.out.println(user);
 
+        Point point = new Point();
+        point.setX(10);
+        point.setY(10);
+        point.getPointQuarter();
+
     }
 
 
