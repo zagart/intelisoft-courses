@@ -13,3 +13,6 @@
 hs_err_pid*
 
 # Created by .ignore support plugin (hsz.mobi)
+current_work/.idea/
+*.iml
+*.xml
