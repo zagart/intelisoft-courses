@@ -16,7 +16,8 @@ public class Main {
         //Task1();
         //Task2();
         //Task3();
-        Task4();
+        //Task4();
+        Task5();
 
     }
 
@@ -97,6 +98,12 @@ public class Main {
             System.out.println();
         }
         PrintArray(array);
+    }
+
+    private static void Task5() {
+
+
+
     }
 
     private static void PrintArray(int[][] array) {
