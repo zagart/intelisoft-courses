@@ -1,0 +1,9 @@
+create-drop database\table;
+alter table
++ pk, fk
+
+select + join
+insert into
+update
+delete
++ where
