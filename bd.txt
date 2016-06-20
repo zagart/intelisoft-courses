@@ -7,3 +7,5 @@ insert into
 update
 delete
 + where
+
+подзапросы, view, postgres - serial, (sequence)

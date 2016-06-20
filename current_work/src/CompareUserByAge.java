@@ -5,7 +5,7 @@ public class CompareUserByAge implements ComparableUser {
 
     @Override
     public int compare(User a, User b) {
-        return b.getAge() - a.getAge();
+        return a.getAge() - b.getAge();
     }
 
 }

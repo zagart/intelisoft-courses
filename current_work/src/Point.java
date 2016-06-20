@@ -8,8 +8,8 @@ import java.util.Scanner;
  */
 public class Point {
 
-    private int x = 0;
-    private int y = 0;
+    final private int x;
+    final private int y;
 
     /**
      public Point() {
@@ -26,18 +26,25 @@ public class Point {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
+//    public void setY(int y) {
+//        this.y = y;
+//    }
 
     public int getX() {
 
         return x;
     }
 
-    public void setX(int x) {
+    public Point(int x, int y) {
         this.x = x;
+        this.y = y;
     }
+
+
+
+    //    public void setX(int x) {
+//        this.x = x;
+//    }
 
     public void getQuarterOfPoint() {
         String msg = "";

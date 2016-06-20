@@ -6,7 +6,7 @@ public class CompareUserByName implements ComparableUser {
     @Override
     public int compare(User a, User b) {
 
-        return b.getLogin().compareToIgnoreCase(a.getLogin());
+        return a.getLogin().compareToIgnoreCase(b.getLogin());
 
     }
 

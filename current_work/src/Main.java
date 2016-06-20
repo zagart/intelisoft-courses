@@ -35,6 +35,14 @@ public class Main {
 //            System.out.println(entry.getValue());
 //        }
 
+
+        Random rnd = new Random();
+        TreeSet<Point> set = new TreeSet<>((p1,p2) -> p1.getX() - p2.getX());
+        for (int i = 0; i < 100000; i++) {
+            set.add(new Point(rnd.nextInt(1000), rnd.nextInt(1000)));
+        }
+        System.out.println(set.subSet(new Point(10,10), new Point(20,20)));
+
     }
 
 
