@@ -2,13 +2,13 @@ package by.grodno.zagart.java.intelisoft;
 
 import by.grodno.zagart.java.intelisoft.Entities.Pet;
 import by.grodno.zagart.java.intelisoft.Entities.User;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.AnnotationConfiguration;
-import org.hibernate.criterion.Restrictions;
-
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.service.ServiceRegistry;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +26,16 @@ public class Main
         user.setLastName("zagrebantsev");
         user.setAge(12);
 
-        SessionFactory factory = new AnnotationConfiguration().addPackage("by.grodno.zagart.java.intelisoft.Entities")
-                .addAnnotatedClass(User.class).addAnnotatedClass(Pet.class).configure().buildSessionFactory();
+        ServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
 
+        Metadata metadata = new MetadataSources(standardRegistry)
+                .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Pet.class)
+                .buildMetadata();
+
+        SessionFactory factory = metadata.buildSessionFactory();
         Session session = factory.openSession();
         Transaction transaction = session.beginTransaction();
 
