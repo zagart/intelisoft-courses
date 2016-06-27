@@ -1,4 +1,4 @@
-package by.grodno.zagart.java.intelisoft.DAO.Util;
+package by.grodno.zagart.java.intelisoft.Util;
 
 import by.grodno.zagart.java.intelisoft.Entities.Employee;
 import org.hibernate.Session;
