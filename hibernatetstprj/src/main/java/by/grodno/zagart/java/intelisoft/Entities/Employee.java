@@ -1,11 +1,10 @@
 package by.grodno.zagart.java.intelisoft.Entities;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
-/**
- * Created by intelisoft on 27.06.2016.
- */
+
 @Entity
 @Table(name = "employees")
 public class Employee {
@@ -13,6 +12,7 @@ public class Employee {
     private Long id;
     private Employee boss;
     private List<Employee> employees;
+    private Date date;
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() { return id; }
@@ -27,5 +27,17 @@ public class Employee {
     @OneToMany(mappedBy = "boss", fetch = FetchType.LAZY)
     public List<Employee> getEmployees() { return employees; }
     public void setEmployees(List<Employee> employees) { this.employees = employees; }
+
+    @Temporal(TemporalType.DATE)
+    public Date getDate() { return date; }
+    public void setDate(Date date) { this.date = date; }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", date=" + date +
+                '}';
+    }
 
 }

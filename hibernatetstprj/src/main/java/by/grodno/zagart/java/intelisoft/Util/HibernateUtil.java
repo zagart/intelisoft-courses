@@ -1,4 +1,4 @@
-package by.grodno.zagart.java.intelisoft.DAO.Util;
+package by.grodno.zagart.java.intelisoft.Util;
 
 import by.grodno.zagart.java.intelisoft.Entities.Employee;
 import org.hibernate.Session;
@@ -8,9 +8,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
-/**
- * Created by intelisoft on 27.06.2016.
- */
+
 public class HibernateUtil {
 
     private static SessionFactory factory = init();

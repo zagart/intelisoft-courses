@@ -2,9 +2,7 @@ package by.grodno.zagart.java.intelisoft.Entities;
 
 import javax.persistence.*;
 
-/**
- * Created by intelisoft on 22.06.2016.
- */
+
 @Entity
 @Table(name = "pet")
 public class Pet {
