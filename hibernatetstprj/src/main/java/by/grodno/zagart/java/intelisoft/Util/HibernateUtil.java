@@ -1,6 +1,7 @@
 package by.grodno.zagart.java.intelisoft.Util;
 
-import by.grodno.zagart.java.intelisoft.Entities.Employee;
+import by.grodno.zagart.java.intelisoft.Entities.Actor;
+import by.grodno.zagart.java.intelisoft.Entities.Film;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -22,7 +23,9 @@ public class HibernateUtil {
                 .configure()
                 .build();
         Metadata metadata = new MetadataSources(standardRegistry)
-                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Film.class)
+                .addAnnotatedClass(Actor.class)
+//                .addAnnotatedClass(Employee.class)
                 .buildMetadata();
         return metadata.buildSessionFactory();
     }

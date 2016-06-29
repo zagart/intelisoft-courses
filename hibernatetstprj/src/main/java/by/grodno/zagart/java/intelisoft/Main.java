@@ -1,23 +1,32 @@
 package by.grodno.zagart.java.intelisoft;
 
-import by.grodno.zagart.java.intelisoft.DAO.Impl.EmployeeDaoImpl;
-import by.grodno.zagart.java.intelisoft.Entities.Employee;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Restrictions;
-import java.util.Date;
+import by.grodno.zagart.java.intelisoft.Entities.Actor;
+import by.grodno.zagart.java.intelisoft.Entities.Film;
+import by.grodno.zagart.java.intelisoft.Util.HibernateUtil;
+import org.hibernate.Session;
 
 public class Main {
 
-    private static EmployeeDaoImpl dao = new EmployeeDaoImpl();
+    private static Session session;
 
-    public static void main( String[] args ) {
-        Employee employee = new Employee();
-        employee.setDate(new Date());
-        dao.saveOrUpdate(employee);
-        System.out.println(dao.getById(1L).getId());
+    public static void main(String[] args ) {
+        session = HibernateUtil.getSession();
 
-        Criterion criterion = Restrictions.eq("id",1L);
-        System.out.println(dao.getByCriteria(criterion));
+        Actor actor = new Actor();
+        actor.setName("Actor1");
+        Actor actor1 = new Actor();
+        actor.setName("Actor2");
+        Actor actor2 = new Actor();
+        actor.setName("Actor2");
+
+        Film film = new Film();
+        film.setTitle("Film1");
+        Film film1 = new Film();
+        film.setTitle("Film2");
+        Film film2 = new Film();
+        film.setTitle("Film3");
+
+        HibernateUtil.closeFactory();
     }
 
 }
