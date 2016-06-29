@@ -23,7 +23,8 @@ public class Actor {
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.MERGE)
+    @JoinTable(name = "merge", joinColumns = @JoinColumn(name ="f_id"), inverseJoinColumns = @JoinColumn(name = "s_id"))
     public List<Film> getFilms() { return films; }
     public void setFilms(List<Film> films) { this.films = films; }
 
