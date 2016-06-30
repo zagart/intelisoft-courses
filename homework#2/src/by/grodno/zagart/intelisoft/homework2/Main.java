@@ -101,6 +101,7 @@ public class Main {
     }
 
     private static void Task5() {
+<<<<<<< HEAD
         Random random = new Random();
         int N = 15;
         int[][] students = new int[N][3];
@@ -129,6 +130,11 @@ public class Main {
             }
         }
         return true;
+=======
+
+
+
+>>>>>>> f5a001c09f5ceebf17f38986cdf74e18f3c1d012
     }
 
     private static void PrintArray(int[][] array) {
