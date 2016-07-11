@@ -11,6 +11,7 @@ public class Employee {
 
     private Long id;
     private Employee boss;
+    private String name;
     private List<Employee> employees;
     private Date date;
 
@@ -23,6 +24,8 @@ public class Employee {
     public Employee getBoss() { return boss; }
     public void setBoss(Employee boss) { this.boss = boss; }
 
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
     @OneToMany(mappedBy = "boss", fetch = FetchType.LAZY)
     public List<Employee> getEmployees() { return employees; }

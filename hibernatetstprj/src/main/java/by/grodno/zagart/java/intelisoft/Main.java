@@ -8,10 +8,10 @@ import org.hibernate.Transaction;
 
 public class Main {
 
-    private static Session session;
 
     public static void main(String[] args ) {
-        session = HibernateUtil.getSession();
+
+        Session session = HibernateUtil.getSession();
         Transaction transaction = session.beginTransaction();
 
         Actor actor = new Actor();

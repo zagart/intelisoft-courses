@@ -46,11 +46,29 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public boolean delete(Long id) {
-        return false;
+        Session session = getSession();
+        Employee employee = session.load(Employee.class, id);
+        boolean result = delete(employee, session);
+        session.close();
+        return result;
     }
 
     @Override
     public boolean delete(Employee employee) {
+        Session session = getSession();
+        boolean result = delete(employee, session);
+        session.close();
+        return result;
+    }
+
+    private boolean delete(Employee employee, Session session) {
+        if (employee != null) {
+            Transaction transaction = session.beginTransaction();
+            session.delete(employee);
+            transaction.commit();
+            return true;
+        }
         return false;
     }
+
 }
