@@ -1,7 +1,9 @@
-package by.grodno.zagart.java.intelisoft;/**
+package by.grodno.zagart.java.intelisoft;
+/**
  * Created by intelisoft on 11.07.2016.
  */
 
+import by.grodno.zagart.java.intelisoft.DAO.Impl.EmployeeDaoImpl;
 import by.grodno.zagart.java.intelisoft.Entities.Employee;
 import by.grodno.zagart.java.intelisoft.Service.Impl.UserServiceImpl;
 import by.grodno.zagart.java.intelisoft.Service.UserService;
@@ -24,7 +26,7 @@ public class FXMain extends Application {
 
     private static Session session;
     private static final ObservableList<Employee> data = FXCollections.observableArrayList();
-    private static UserService service = new UserServiceImpl();
+    private static UserService service = new UserServiceImpl(new EmployeeDaoImpl());
 
     @Override
     public void start(Stage primaryStage) {

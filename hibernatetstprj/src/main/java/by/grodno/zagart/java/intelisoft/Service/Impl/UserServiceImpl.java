@@ -1,7 +1,6 @@
 package by.grodno.zagart.java.intelisoft.Service.Impl;
 
 import by.grodno.zagart.java.intelisoft.DAO.EmployeeDao;
-import by.grodno.zagart.java.intelisoft.DAO.Impl.EmployeeDaoImpl;
 import by.grodno.zagart.java.intelisoft.Entities.Employee;
 import by.grodno.zagart.java.intelisoft.Service.UserService;
 import org.hibernate.criterion.Restrictions;
@@ -14,7 +13,11 @@ import java.util.stream.Collectors;
  */
 public class UserServiceImpl implements UserService {
 
-    private EmployeeDao dao = new EmployeeDaoImpl();
+    private EmployeeDao dao;
+
+    public UserServiceImpl (EmployeeDao dao) {
+        this.dao = dao;
+    }
 
     @Override
     public List<Employee> getUsers() {
