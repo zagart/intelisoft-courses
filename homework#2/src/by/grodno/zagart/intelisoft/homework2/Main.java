@@ -101,19 +101,63 @@ public class Main {
     }
 
     private static void Task5() {
+<<<<<<< HEAD
+        Random random = new Random();
+        int N = 15;
+        int[][] students = new int[N][3];
+        for (int i = 0; i < students.length; i++) {
+            students[i][0] = 2 + random.nextInt(8);
+            students[i][1] = 2 + random.nextInt(8);
+            int result = students[i][0] * students[i][1];
+            if (!FindExample(students, result)) {
+                students[i][2] = result;
+                i--;
+            } else {
+                students[i][2] = result;
+            }
+
+
+        }
+        PrintArray(students);
+        SortByValue(students);
+        PrintArray(students);
+    }
+
+    private static boolean FindExample(int[][] students, int value) {
+        for (int i = 0; i < students.length; i++) {
+            if (students[i][2] == value) {
+                return false;
+            }
+        }
+        return true;
+=======
 
 
 
+>>>>>>> f5a001c09f5ceebf17f38986cdf74e18f3c1d012
     }
 
     private static void PrintArray(int[][] array) {
         System.out.println();
         for (int[] innerArray : array) {
             for (int element : innerArray) {
-                System.out.print(element + " ");
+                System.out.print("|" + element + "| ");
             }
             System.out.println();
         }
     }
+
+    private static void SortByValue(int[][] array) {
+        for (int i = 1; i < array.length; i++) {
+            int j = i - 1;
+            while (j >= 0 && array[j + 1][2] < array[j][2]) {
+                array[j + 1][2] = array[j + 1][2] + array[j][2];
+                array[j][2] = array[j + 1][2] - array[j][2];
+                array[j + 1][2] = array[j + 1][2] - array[j][2];
+                j--;
+            }
+        }
+    }
+
 
 }
